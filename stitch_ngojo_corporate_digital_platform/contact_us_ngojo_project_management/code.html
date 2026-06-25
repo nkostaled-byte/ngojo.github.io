@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us | NGOJO Project Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#ffdad6",
+                    "inverse-surface": "#303030",
+                    "silver-border": "#E2E8F0",
+                    "outline-variant": "#c8c5d1",
+                    "primary": "#160c50",
+                    "secondary-container": "#de2d30",
+                    "on-surface": "#1b1c1c",
+                    "on-background": "#1b1c1c",
+                    "surface-tint": "#5c5699",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#eae8e7",
+                    "tertiary-container": "#370e00",
+                    "on-tertiary": "#ffffff",
+                    "ice-white": "#F8FAFC",
+                    "surface-bright": "#fbf9f8",
+                    "on-secondary-container": "#fffbff",
+                    "inverse-primary": "#c6bfff",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dcd9d9",
+                    "background": "#fbf9f8",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#370e00",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-container": "#b77359",
+                    "on-tertiary-fixed-variant": "#6e3822",
+                    "secondary": "#e31e24",
+                    "primary-container": "#180f52",
+                    "inverse-on-surface": "#f3f0f0",
+                    "surface-variant": "#e4e2e1",
+                    "on-primary-fixed": "#180f52",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "outline": "#787581",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#ffdbcf",
+                    "surface-container-highest": "#e4e2e1",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "on-primary-fixed-variant": "#443e7f",
+                    "surface": "#fbf9f8",
+                    "primary-fixed-dim": "#c6bfff",
+                    "primary-fixed": "#e4dfff",
+                    "secondary-fixed-dim": "#ffb3ad",
+                    "tertiary": "#000000",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#474550",
+                    "on-secondary-fixed-variant": "#930011",
+                    "on-secondary-fixed": "#410003",
+                    "slate-gray": "#64748B",
+                    "on-primary-container": "#827cc1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "2px",
+                    "lg": "4px",
+                    "xl": "8px",
+                    "full": "12px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "stack-md": "16px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "stack-sm": "8px",
+                    "section-gap": "80px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+        }
+        .navy-shadow {
+            box-shadow: 0 10px 30px -10px rgba(22, 12, 80, 0.08);
+        }
+        .navy-shadow-hover:hover {
+            box-shadow: 0 20px 40px -12px rgba(22, 12, 80, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-silver-border shadow-sm">
+<nav class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<img alt="NGOJO Brand Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxxZf3nSFgQCbZZeIqaGdfEn3fQ6GZ5K04F-LFKKBmdm9nxJQJSyrTO_myDMm0_dDi9o86cRejV0CrF5Vh2re09PUsbD7Jq7HxZSzYhNk4gRNgdZBA1cHcHHvtPwPtj8dMKNA_hGch2iEPDSiFsQaErXwmcM8ItzBH9HOnC-jRsisEmlELmsMfR0G-Hhmn1nNuZVbDRSq74I6z8ySKPY49UTSx45EYG_N0PWFZOejkfe4fRbWaWIL8DzLgMg5EoDLVjBhQzkp6tcc"/>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="#">Services</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="#">Projects</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="#">Methodology</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="#">Careers</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-headline-md text-[14px] hover:opacity-90 active:scale-95 transition-all">
+                Request a Quote
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[400px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-primary/60 z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A cinematic wide shot of a modern architectural site in South Africa during golden hour. The building features clean lines of steel and glass, reflecting the sunset. The atmosphere is professional and high-end, using a palette of deep navy blues, industrial grays, and warm sunlight accents. High-quality corporate photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg7AEIyEh9jTJ-ZY8mF1k97k2QA5ku5apnrg8EIhAzrJT4AhT5tnjamEHjyXrMpxuglJhTulNBdtSWbwtij4gJiV0ayzVCqXNSJH1tTax0ZOqVNB6CLSV7UzZW_OU7_QGF8ZEp0t6rkGrhpo3ysMyWIs0b25h4IFwU9n_sGWDxBBytDdLkVHlOzBzZCRXiqOZ619_OdlRM65QT3QFqv1s4I8dWyouISjzBN4-p7PqNnr6SaufWc1JB2hk2u7VXkkYx-YPCWCIkwmI"/>
+</div>
+<div class="relative z-20 max-w-container-max mx-auto px-gutter w-full text-on-primary">
+<h1 class="font-display-lg text-display-lg mb-4">Contact Our Experts</h1>
+<p class="font-body-lg text-body-lg max-w-2xl text-ice-white/90">Experience precision engineering and world-class project management. Let's discuss your next landmark development.</p>
+</div>
+</section>
+<!-- Contact Grid -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left: Contact Information & Direct Actions -->
+<div class="lg:col-span-5 space-y-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-8 text-primary relative">
+                        Get in Touch
+                        <span class="absolute -bottom-2 left-0 w-16 h-1 bg-secondary"></span>
+</h2>
+<div class="space-y-8">
+<!-- Address -->
+<div class="flex gap-4 group">
+<div class="w-12 h-12 flex-shrink-0 bg-ice-white border border-silver-border rounded-full flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-slate-gray mb-1">OFFICE ADDRESS</h4>
+<p class="font-body-md text-body-md text-on-surface">81 Mitchell Street Eastcliff<br/>Hermanus, 7200, South Africa</p>
+</div>
+</div>
+<!-- Phone -->
+<div class="flex gap-4 group">
+<div class="w-12 h-12 flex-shrink-0 bg-ice-white border border-silver-border rounded-full flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-slate-gray mb-1">DIRECT LINE</h4>
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="tel:+27609771206">+27 60 977 1206</a>
+</div>
+</div>
+<!-- Email -->
+<div class="flex gap-4 group">
+<div class="w-12 h-12 flex-shrink-0 bg-ice-white border border-silver-border rounded-full flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-slate-gray mb-1">EMAIL ENQUIRIES</h4>
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="mailto:luckyelec@gmail.com">luckyelec@gmail.com</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Rapid Actions -->
+<div class="bg-surface-container p-8 rounded-lg border border-silver-border navy-shadow">
+<h3 class="font-headline-md text-headline-md mb-6 text-primary">Connect Instantly</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<a class="flex items-center justify-center gap-2 bg-[#25D366] text-white py-4 rounded font-bold hover:opacity-90 transition-all" href="https://wa.me/27609771206">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+                            WhatsApp
+                        </a>
+<a class="flex items-center justify-center gap-2 border-2 border-secondary text-secondary py-4 rounded font-bold hover:bg-secondary hover:text-white transition-all" href="tel:+27609771206">
+<span class="material-symbols-outlined">phone_forwarded</span>
+                            Call Now
+                        </a>
+</div>
+</div>
+<!-- Map Placeholder -->
+<div class="h-[300px] bg-surface-container-highest rounded-lg overflow-hidden border border-silver-border relative">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center p-6">
+<span class="material-symbols-outlined text-4xl text-secondary mb-2">map</span>
+<p class="font-label-caps text-label-caps">Hermanus, South Africa</p>
+</div>
+</div>
+<img class="w-full h-full object-cover grayscale contrast-125 opacity-50" data-location="Hermanus, South Africa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5HImsTZu2vLcYm1Y41aUJAmm_pWq6nS2FpOzs2TS0BQJGpyv50gtrHqEFqHuxerdbwkQ_9WvzUS_F6GpSkt7sicrKG-c43of2dFZleY8i7bAkz34SH7PQR0R4qHbCTvb33GvOMCtXzUulJmWlhA4OC7bs0g8Er9CpyBeo3vcETMpLSwAv9-Hv3kUzm3ab6VRDFRD4ryW0HVZZskBkkhf5uboyx6TEiUWECFr5ZuDntcHTyCspy_ViO2Lc6ZNNeD198XxxcFYn5Ys"/>
+</div>
+</div>
+<!-- Right: High-End Contact Form -->
+<div class="lg:col-span-7">
+<div class="bg-white p-8 md:p-12 rounded-lg border border-silver-border navy-shadow-hover transition-all">
+<h2 class="font-headline-lg text-headline-lg mb-2 text-primary">Send a Message</h2>
+<p class="font-body-md text-slate-gray mb-10">Fill out the form below and our project managers will respond within 24 hours.</p>
+<form class="space-y-6" id="contactForm">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-primary block">FULL NAME</label>
+<input class="w-full px-4 py-3 border border-silver-border rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="John Doe" required="" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-primary block">EMAIL ADDRESS</label>
+<input class="w-full px-4 py-3 border border-silver-border rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="john@company.com" required="" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-primary block">PHONE NUMBER</label>
+<input class="w-full px-4 py-3 border border-silver-border rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="+27 ..." type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-primary block">SERVICE INTEREST</label>
+<select class="w-full px-4 py-3 border border-silver-border rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-white">
+<option>General Project Management</option>
+<option>Structural Engineering</option>
+<option>Commercial Construction</option>
+<option>Residential Development</option>
+<option>Electrical &amp; Civil Works</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-primary block">MESSAGE</label>
+<textarea class="w-full px-4 py-3 border border-silver-border rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Describe your project requirements..." required="" rows="5"></textarea>
+</div>
+<div class="pt-4">
+<button class="w-full md:w-auto bg-primary text-on-primary px-12 py-4 rounded font-bold hover:bg-secondary transition-colors flex items-center justify-center gap-3" type="submit">
+                                Send Enquiry
+                                <span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Quick Quote Card -->
+<div class="mt-8 bg-primary text-on-primary p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-32 h-32 bg-secondary opacity-20 rounded-bl-full transform translate-x-8 -translate-y-8 group-hover:scale-110 transition-transform"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Need a Quick Quote?</h3>
+<p class="font-body-md opacity-80">Upload your project specs or brief and get a preliminary estimate.</p>
+</div>
+<button class="bg-secondary text-white px-8 py-3 rounded font-bold whitespace-nowrap hover:bg-white hover:text-secondary transition-all">
+                            Request a Quote
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Trust Section -->
+<section class="bg-ice-white py-20 border-y border-silver-border">
+<div class="max-w-container-max mx-auto px-gutter text-center">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">WORLD-CLASS STANDARDS</span>
+<h2 class="font-display-lg text-[36px] mb-12 text-primary">Committed to Safety &amp; Quality</h2>
+<div class="flex flex-wrap justify-center gap-12 opacity-80">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">verified</span> <span class="font-bold text-primary">BEE CERTIFIED</span></div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">security</span> <span class="font-bold text-primary">SAFETY PROTOCOLS</span></div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">architecture</span> <span class="font-bold text-primary">ISO ALIGNED</span></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary w-full mt-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-16 max-w-container-max mx-auto">
+<div class="space-y-4">
+<img alt="NGOJO Brand Logo" class="h-14 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxxZf3nSFgQCbZZeIqaGdfEn3fQ6GZ5K04F-LFKKBmdm9nxJQJSyrTO_myDMm0_dDi9o86cRejV0CrF5Vh2re09PUsbD7Jq7HxZSzYhNk4gRNgdZBA1cHcHHvtPwPtj8dMKNA_hGch2iEPDSiFsQaErXwmcM8ItzBH9HOnC-jRsisEmlELmsMfR0G-Hhmn1nNuZVbDRSq74I6z8ySKPY49UTSx45EYG_N0PWFZOejkfe4fRbWaWIL8DzLgMg5EoDLVjBhQzkp6tcc"/>
+<p class="font-body-md text-surface-variant max-w-xs">Pioneering excellence in infrastructure and project delivery across South Africa.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-primary mb-6">CONTACT</h4>
+<ul class="space-y-4 font-body-md text-surface-variant">
+<li>81 Mitchell Street, Hermanus</li>
+<li>+27 60 977 1206</li>
+<li>luckyelec@gmail.com</li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-primary mb-6">COMPANY</h4>
+<ul class="space-y-4">
+<li><a class="text-surface-variant hover:text-on-primary hover:underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant hover:text-on-primary hover:underline transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-surface-variant hover:text-on-primary hover:underline transition-all" href="#">BEE Certification</a></li>
+<li><a class="text-surface-variant hover:text-on-primary hover:underline transition-all" href="#">Safety Protocols</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-primary mb-6">FOLLOW US</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-on-primary/20 flex items-center justify-center rounded hover:bg-secondary transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</a>
+<a class="w-10 h-10 border border-on-primary/20 flex items-center justify-center rounded hover:bg-secondary transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-outline/20 py-8 px-gutter text-center">
+<p class="font-body-md text-surface-variant/60">© 2024 NGOJO Project Management. All rights reserved.</p>
+</div>
+</footer>
+<script>
+    // Micro-interactions for form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button[type="submit"]');
+        const originalContent = btn.innerHTML;
+        
+        btn.disabled = true;
+        btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Sending...';
+        
+        // Simulate API call
+        setTimeout(() => {
+            btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Message Sent!';
+            btn.classList.remove('bg-primary');
+            btn.classList.add('bg-green-600');
+            this.reset();
+            
+            setTimeout(() => {
+                btn.innerHTML = originalContent;
+                btn.classList.add('bg-primary');
+                btn.classList.remove('bg-green-600');
+                btn.disabled = false;
+            }, 3000);
+        }, 1500);
+    });
+
+    // Sticky Nav shadow effect
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 20) {
+            header.classList.add('shadow-md');
+        } else {
+            header.classList.remove('shadow-md');
+        }
+    });
+</script>
+</body></html>

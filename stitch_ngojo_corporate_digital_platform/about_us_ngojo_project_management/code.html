@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | NGOJO Project Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#ffdad6",
+                    "inverse-surface": "#303030",
+                    "silver-border": "#E2E8F0",
+                    "outline-variant": "#c8c5d1",
+                    "primary": "#1a1a4b", /* Navy from Logo */
+                    "secondary-container": "#e31e24", /* Red from Logo */
+                    "on-surface": "#1b1c1c",
+                    "on-background": "#1b1c1c",
+                    "surface-tint": "#1a1a4b",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#eae8e7",
+                    "tertiary-container": "#370e00",
+                    "on-tertiary": "#ffffff",
+                    "ice-white": "#F8FAFC",
+                    "surface-bright": "#fbf9f8",
+                    "on-secondary-container": "#fffbff",
+                    "inverse-primary": "#c6bfff",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dcd9d9",
+                    "background": "#fbf9f8",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#370e00",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-container": "#b77359",
+                    "on-tertiary-fixed-variant": "#6e3822",
+                    "secondary": "#e31e24", /* Updated to Red from Logo */
+                    "primary-container": "#1a1a4b",
+                    "inverse-on-surface": "#f3f0f0",
+                    "surface-variant": "#e4e2e1",
+                    "on-primary-fixed": "#1a1a4b",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "outline": "#787581",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#ffdbcf",
+                    "surface-container-highest": "#e4e2e1",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "on-primary-fixed-variant": "#443e7f",
+                    "surface": "#fbf9f8",
+                    "primary-fixed-dim": "#c6bfff",
+                    "primary-fixed": "#e4dfff",
+                    "secondary-fixed-dim": "#ffb3ad",
+                    "tertiary": "#1a1a4b",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#474550",
+                    "on-secondary-fixed-variant": "#930011",
+                    "on-secondary-fixed": "#410003",
+                    "slate-gray": "#64748B",
+                    "on-primary-container": "#827cc1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "stack-md": "16px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "stack-sm": "8px",
+                    "section-gap": "80px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(0,0,0,0.1);
+            color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        .custom-shadow {
+            box-shadow: 0 20px 40px rgba(22, 12, 80, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-silver-border shadow-sm">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center">
+<img alt="NGOJO Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxxZf3nSFgQCbZZeIqaGdfEn3fQ6GZ5K04F-LFKKBmdm9nxJQJSyrTO_myDMm0_dDi9o86cRejV0CrF5Vh2re09PUsbD7Jq7HxZSzYhNk4gRNgdZBA1cHcHHvtPwPtj8dMKNA_hGch2iEPDSiFsQaErXwmcM8ItzBH9HOnC-jRsisEmlELmsMfR0G-Hhmn1nNuZVbDRSq74I6z8ySKPY49UTSx45EYG_N0PWFZOejkfe4fRbWaWIL8DzLgMg5EoDLVjBhQzkp6tcc"/>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="#">Services</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="#">Projects</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="#">Methodology</a>
+<a class="font-body-md text-body-md text-secondary font-bold border-b-2 border-secondary pb-1" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="#">Careers</a>
+</nav>
+<button class="bg-primary text-on-primary font-display-lg px-6 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all active:scale-95">
+            Request a Quote
+        </button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-center overflow-hidden bg-primary text-on-primary">
+<div class="absolute inset-0 opacity-40">
+<div class="w-full h-full bg-cover bg-center" data-alt="High-resolution wide shot of a modern architectural construction site at dusk with industrial lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBO_zBKBYVlDUenzeZmlmM1qt8JOE9L1P7PiDpl5MsllSqJOgwEl_XAKi_CyvmhbXJmlqkmgBck8eOLSP0D5S514HakndeR9gLKQ7I-WHIe7_lPjg-An3dX6sf_Z57l-JZlL0sl94fTy5TYYqjYREapmUUuTn-w01rzLzmPWdJilKopOdLXX1xw12mwtZuYoxRfiA0mNddyQkmIIjSS3xuKYuWKXt5p-n_xiipFIDFZDWE6Pl5UctG9YLPPAZaNxHIFQb2GJS34s7c')"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter w-full">
+<span class="font-label-caps text-label-caps text-secondary-fixed mb-4 block">ESTABLISHED 2017</span>
+<h1 class="font-display-lg text-display-lg md:text-[64px] md:leading-tight max-w-3xl mb-6">
+            Engineering Excellence in Project Management.
+        </h1>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-xl">
+            NGOJO Project Management stands as a beacon of reliability and technical mastery in the South African construction landscape.
+        </p>
+</div>
+</section>
+<!-- Company Story -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">The Legacy of Lucky Ngolothi</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed">
+<p class="font-body-lg">
+                    Founded in 2017 by <strong class="text-primary">Lucky Ngolothi</strong>, NGOJO Project Management was born from a vision of bringing rigorous electrical engineering standards to large-scale project execution.
+                </p>
+<p>
+                    After qualifying in Electrical Engineering, Lucky recognized a critical gap in the market: the need for project management that treats every structural decision with the precision of a high-voltage circuit. What started as a focused technical consultancy has evolved into a multi-disciplinary powerhouse.
+                </p>
+<p>
+                    Today, we are more than just contractors; we are partners in progress, ensuring that every foundation we lay and every wire we pull contributes to a safer, more reliable infrastructure for all South Africans.
+                </p>
+</div>
+</div>
+<div class="lg:col-span-7 grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-12">
+<div class="h-80 w-full bg-cover bg-center rounded-xl shadow-lg border border-silver-border" data-alt="Portrait of an electrical engineer." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0x0ad0bN4MBAjZXbgfledYgveGIY53nhA724bXIXctCEzF0VF6at42m_WmN_UATL9aoQq7oytT23l2tuhN7AvYNUt8jFOea1yapXGBsN-3AiCIcOh1ImPLllaQQMGyNxafop9dFAm8D7C4TJYqgb525IDIf0XGHLqJi--tOn34Dem3ls18ESCygnmRF8wZXstdoGYXLlCvVmjkfMEJisWkH5Uhmh0H9uPR31oMk6zR7hVeEnBpSZ6F-ZjMJ00eid8-xBmo4MLmbg')"></div>
+<div class="bg-secondary p-8 rounded-xl text-on-primary">
+<span class="font-display-lg text-[48px] font-extrabold block">07</span>
+<span class="font-label-caps text-label-caps">YEARS OF PRECISION</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container p-8 rounded-xl border border-silver-border">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">engineering</span>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Technical Core</h4>
+<p class="text-on-surface-variant text-sm">Every project lead is certified in specialized engineering disciplines.</p>
+</div>
+<div class="h-64 w-full bg-cover bg-center rounded-xl shadow-lg" data-alt="Electrical engineering tools." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZJNY_cn3Pp-5wvfKCHwKWk21TISvu24w2ljE7NrLU-Nv8CZ6Hwh3v6Uqt-4udsgdzH15c72GOFMhd2vYcu5O7Zy_cXTqvmhYbl2hEK0ShmcM-ZvpTJi-k3xXsOFwvt5GWwNY9VizrjVdn0mRhPe016EmNrDWz_8FvTLNEW5_pAxyWeGvEoVyF-GLkBdmgcQ8Xzp02Ry1MNQ9TUtbNV6hNvYpq_umQLhn279VfVyQPO_QqSDfCAEjwcHfIGl3mFcOtTpVbYlwe2VU')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission, Vision, Values (Bento Grid) -->
+<section class="bg-ice-white py-section-gap">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Mission -->
+<div class="md:col-span-2 bg-white p-12 border border-silver-border custom-shadow flex flex-col justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-secondary mb-6 block">OUR MISSION</span>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-6">To deliver turnkey engineering solutions that empower communities and redefine industry standards.</h3>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-1 border-t-4 border-secondary"></div>
+</div>
+</div>
+<!-- Vision -->
+<div class="bg-primary p-12 text-on-primary flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-on-primary/60 mb-6 block">OUR VISION</span>
+<p class="font-headline-md text-headline-md">To be South Africa's most trusted partner in large-scale infrastructure and industrial project management.</p>
+</div>
+<!-- Values -->
+<div class="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+<div class="bg-white p-8 border border-silver-border hover:border-secondary transition-colors group">
+<div class="w-12 h-12 rounded-full border border-silver-border flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:border-secondary transition-all">
+<span class="material-symbols-outlined text-secondary group-hover:text-white">verified</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-4">Quality</h4>
+<p class="text-on-surface-variant">We adhere to ISO-grade standards in every procurement and execution phase.</p>
+</div>
+<div class="bg-white p-8 border border-silver-border hover:border-secondary transition-colors group">
+<div class="w-12 h-12 rounded-full border border-silver-border flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:border-secondary transition-all">
+<span class="material-symbols-outlined text-secondary group-hover:text-white">health_and_safety</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-4">Safety</h4>
+<p class="text-on-surface-variant">Zero-harm culture is embedded in our DNA, ensuring every site is a secure environment.</p>
+</div>
+<div class="bg-white p-8 border border-silver-border hover:border-secondary transition-colors group">
+<div class="w-12 h-12 rounded-full border border-silver-border flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:border-secondary transition-all">
+<span class="material-symbols-outlined text-secondary group-hover:text-white">handshake</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-4">Reliability</h4>
+<p class="text-on-surface-variant">Predictable timelines and transparent budgets are the foundation of our client trust.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Company Journey Timeline -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter overflow-hidden">
+<div class="text-center mb-16">
+<h2 class="font-display-lg text-display-lg text-primary">The Journey of NGOJO</h2>
+<div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+</div>
+<div class="relative">
+<!-- Timeline Line -->
+<div class="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-silver-border hidden md:block"></div>
+<div class="space-y-24">
+<!-- 2017 -->
+<div class="relative flex flex-col md:flex-row items-center gap-8 md:gap-0">
+<div class="md:w-1/2 md:pr-16 text-center md:text-right">
+<h3 class="font-display-lg text-primary mb-2">2017</h3>
+<p class="font-headline-md text-secondary mb-4">The Foundation</p>
+<p class="text-on-surface-variant">NGOJO is officially registered by Lucky Ngolothi. Operations begin with a focus on electrical substation maintenance.</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full hidden md:block border-4 border-white"></div>
+<div class="md:w-1/2 md:pl-16">
+<div class="h-48 w-full md:w-80 bg-cover bg-center rounded-lg shadow-sm grayscale hover:grayscale-0 transition-all duration-500" data-alt="Humble beginnings of a corporate empire." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADNHhMa_p9DFb1UuxPSyexLoH_ZysP-irARo85vKQv6k3UdolA489kxY5tGcTRmvRfuH73B3xFS3CxxYTIM4o7siA2UYFTzinXaEvAAxhENCcIM2_J9Lw6YIRic1xcDWwml-6MMfNDtNUInQTut65-bgVsrb4XIISjliw-x_V75k61qcNUT6R3Do0a0D7tOP8HQDGye76xlof0ACeG_wBFjTtgnWU9mfQhrJ6QRwDGFFikyjziXQ_QjVhaYK_ivzLdFDIGydtb_LM')"></div>
+</div>
+</div>
+<!-- 2020 -->
+<div class="relative flex flex-col md:flex-row-reverse items-center gap-8 md:gap-0">
+<div class="md:w-1/2 md:pl-16 text-center md:text-left">
+<h3 class="font-display-lg text-primary mb-2">2020</h3>
+<p class="font-headline-md text-secondary mb-4">Expansion Phase</p>
+<p class="text-on-surface-variant">The firm expands into General Building and Infrastructure, securing first major government tender for regional development.</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full hidden md:block border-4 border-white"></div>
+<div class="md:w-1/2 md:pr-16 flex md:justify-end">
+<div class="h-48 w-full md:w-80 bg-cover bg-center rounded-lg shadow-sm" data-alt="Large construction project." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYWfZKhxSEnGZKogCR2GJu9cjxx16bSph-eIaKu-CSSHd3sB4HKakxW3Xo4kBFLI9Am2XCh3Ui6ByfrzR27ukgZKEwzpseQNxHCZ14JCRUerQacqJSM-SUycJgLT0L3ogAHDuZQFc9aZ20rXcpNSbAmPOrSuvEWa-ZbAjhT_WIovVdZj0vMXHc6wDiyqURXgxOZbs65HOro3a1ALNVhtkT4XrDJhsAsd6lXVesiiU-uCJoEmr66gATEo2fPxbPJQInQGK1L2NZeBs')"></div>
+</div>
+</div>
+<!-- 2024 -->
+<div class="relative flex flex-col md:flex-row items-center gap-8 md:gap-0">
+<div class="md:w-1/2 md:pr-16 text-center md:text-right">
+<h3 class="font-display-lg text-primary mb-2">2024</h3>
+<p class="font-headline-md text-secondary mb-4">Market Leadership</p>
+<p class="text-on-surface-variant">Now a Level 1 B-BBEE certified leader, NGOJO manages multi-billion rand projects across South Africa's major urban centers.</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full hidden md:block border-4 border-white"></div>
+<div class="md:w-1/2 md:pl-16">
+<div class="h-48 w-full md:w-80 bg-cover bg-center rounded-lg shadow-sm" data-alt="Modern glass corporate headquarters." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBT8SSGCsi0lfF8EbpajCtlild-sY6mgMSSooCjR3RitDgq7Y0Km8oAsoaj8zLR5LeoPL-KSp2DPI9v4RIF9djomGgKx6j9qHtg8ifEVgusVFzogUE434QqgPqlMMhUd9-hCbfSu2JCgqrcRjC5UscIef6I0q-wZjnxrcaRM3vD4Zi5C37Don68Zxoicz1hXV5SDBJs1xqGK8jJVpdgUvPOdoJK00WWMy3ilyGt1SxUrFwtE-7BqgSXBaZ_OlXPh3zK0hyZoxb-_Xw')"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Team -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">EXPERTISE AT THE HELM</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Our Leadership Team</h2>
+<p class="mt-4 text-on-surface-variant">Guided by technical expertise and strategic foresight, our leadership team ensures that every NGOJO project exceeds expectations.</p>
+</div>
+<a class="hidden md:flex items-center gap-2 text-primary font-bold hover:text-secondary transition-all" href="#">
+                View All Experts
+                <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Leader 1 -->
+<div class="group">
+<div class="relative overflow-hidden mb-4">
+<div class="h-[400px] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of Lucky Ngolothi." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8o6HMtTzBbZ3vZGtyda3WSUtiSArvPjFbFNmFmDXi-NRMFLMNCxvjsbZ3i7pjBx-vAqU7hTzA2X2Lotf_iEHFiNRBWxMDTmq42_l36VKtJJKAmjRm6K4S1gWA8na1bBoOqdPLR_FGBw8pv3ehPYmKOdOGiMw6Ae5ifzl9kVvNRUI3InLbxl4ejpjywYTGT4Uv0hTJmwcauGdyjOrVaRNTUm3R6fbhxghqjYC1N7IMHAV2pHTfq0Xy6bXLK05atVND7n11icKIFqI')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-white cursor-pointer hover:text-secondary">contact_mail</span>
+<span class="material-symbols-outlined text-white cursor-pointer hover:text-secondary">share</span>
+</div>
+</div>
+</div>
+<h5 class="font-headline-md text-headline-md text-primary">Lucky Ngolothi</h5>
+<p class="text-secondary font-label-caps text-[10px] mt-1">FOUNDER &amp; CHIEF EXECUTIVE</p>
+</div>
+<!-- Leader 2 -->
+<div class="group">
+<div class="relative overflow-hidden mb-4">
+<div class="h-[400px] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Professional portrait of Sarah Mthembu." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZLYu290RGkGg-TNTqx2KoRiv6Mk8_6mQlcxTEmCYH1xyVJ81uX-Kungi-YaQVvzc9RV2Ge0Bzg3jEVGN50_ntisbghPafoUTP4Pe7TJdASDJmaY4jPHBta7SSvtMKuN6ItPFDxzs29TR55omXqw0PAgHgkfZ6CU4yuIpFRwLsXADTXoHRyXCUpSmC-6EMf9txHZM_l1Y-HFZYZ7okudOGrwJdhv6EIDkW4tOYLYGqKbqsp-xFQkUK79ReMGqw742pxvRlnmuUOLo')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-white">contact_mail</span>
+<span class="material-symbols-outlined text-white">share</span>
+</div>
+</div>
+</div>
+<h5 class="font-headline-md text-headline-md text-primary">Sarah Mthembu</h5>
+<p class="text-secondary font-label-caps text-[10px] mt-1">CHIEF OPERATIONS OFFICER</p>
+</div>
+<!-- Leader 3 -->
+<div class="group">
+<div class="relative overflow-hidden mb-4">
+<div class="h-[400px] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of Johan Viljoen." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCpC9rz_s5pENM0JatVXKdAsWUqRUFXiCzUrElgr17C0DEnes3k4Qak-lyJg5djE4imojMF3q3VdiFMA7Xie0PWMR6g8YVq_u9WHg8-orQZ2G9zOcPmCw0GjGMiD-nMxpcxlfbLHHy61ZmpCMX1BbLPkOyFKATjqCjSwXqDR1lW8oCaujTDbfQxchBabywYaFASwrMYOgSUXqMDGF3R_LAmAYAV5BdzIequto5Q2ifhAtbCuJPEIu4Rn_J7FXj_KzbX4Dy1X1i11nQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-white">contact_mail</span>
+<span class="material-symbols-outlined text-white">share</span>
+</div>
+</div>
+</div>
+<h5 class="font-headline-md text-headline-md text-primary">Johan Viljoen</h5>
+<p class="text-secondary font-label-caps text-[10px] mt-1">TECHNICAL DIRECTOR</p>
+</div>
+<!-- Leader 4 -->
+<div class="group">
+<div class="relative overflow-hidden mb-4">
+<div class="h-[400px] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of Sipho Dlamini." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBE1y4ZDSWcZTA1nzoOTMce-t91_-kbq2bhnDWAglaWxdd9l9RVBIj7-RAgnRj9NgIKhLsIhfGGFRGy4OQGBG7ti51h3pneTaBNhVdAdWpACfToZLo3C17H6PjrFL5yid1LGp42rVfJ15N9qI8_yj4SaR1oKp3Z99QJkPRUhGAWMQl8NKcHp7tCm6StOqajqtF5lHXnMvZW0lHwQv3zDUvkscm9rlWKt1fi56zho4OSlGsysOWLX_AL4xesFQoo3L9VHPllFfhlIXA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-white">contact_mail</span>
+<span class="material-symbols-outlined text-white">share</span>
+</div>
+</div>
+</div>
+<h5 class="font-headline-md text-headline-md text-primary">Sipho Dlamini</h5>
+<p class="text-secondary font-label-caps text-[10px] mt-1">HEAD OF INFRASTRUCTURE</p>
+</div>
+</div>
+</div>
+</section>
+<!-- BEE & Accreditation -->
+<section class="py-16 bg-white">
+<div class="max-w-container-max mx-auto px-gutter text-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-8 block">TRUSTED &amp; ACCREDITED</span>
+<div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-300">
+<div class="h-12 w-32 bg-slate-200 rounded flex items-center justify-center font-bold text-slate-500">ISO 9001</div>
+<div class="h-12 w-32 bg-slate-200 rounded flex items-center justify-center font-bold text-slate-500">CIDB 9EB</div>
+<div class="h-12 w-32 bg-slate-200 rounded flex items-center justify-center font-bold text-slate-500">ECSA</div>
+<div class="h-12 w-32 bg-slate-200 rounded flex items-center justify-center font-bold text-slate-500 text-[10px]">B-BBEE LEVEL 1</div>
+<div class="h-12 w-32 bg-slate-200 rounded flex items-center justify-center font-bold text-slate-500">NOSA</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary w-full mt-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-16 max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="mb-6">
+<img alt="NGOJO Logo" class="h-10 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxxZf3nSFgQCbZZeIqaGdfEn3fQ6GZ5K04F-LFKKBmdm9nxJQJSyrTO_myDMm0_dDi9o86cRejV0CrF5Vh2re09PUsbD7Jq7HxZSzYhNk4gRNgdZBA1cHcHHvtPwPtj8dMKNA_hGch2iEPDSiFsQaErXwmcM8ItzBH9HOnC-jRsisEmlELmsMfR0G-Hhmn1nNuZVbDRSq74I6z8ySKPY49UTSx45EYG_N0PWFZOejkfe4fRbWaWIL8DzLgMg5EoDLVjBhQzkp6tcc"/>
+</div>
+<p class="text-surface-variant font-body-md pr-8">
+                South Africa's premier partner for precision engineering and innovative project management.
+            </p>
+</div>
+<div class="md:col-span-1">
+<h4 class="font-label-caps text-label-caps text-secondary-fixed mb-6">QUICK LINKS</h4>
+<ul class="space-y-4">
+<li><a class="text-surface-variant hover:text-on-primary hover:underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant hover:text-on-primary hover:underline transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-surface-variant hover:text-on-primary hover:underline transition-all" href="#">BEE Certification</a></li>
+<li><a class="text-surface-variant hover:text-on-primary hover:underline transition-all" href="#">Safety Protocols</a></li>
+</ul>
+</div>
+<div class="md:col-span-1">
+<h4 class="font-label-caps text-label-caps text-secondary-fixed mb-6">OFFICES</h4>
+<p class="text-surface-variant font-body-md mb-4">
+                Sandton Corporate Woods<br/>
+                Johannesburg, 2196
+            </p>
+<p class="text-surface-variant font-body-md">
+                +27 11 000 0000<br/>
+                info@ngojo.co.za
+            </p>
+</div>
+<div class="md:col-span-1">
+<h4 class="font-label-caps text-label-caps text-secondary-fixed mb-6">NEWSLETTER</h4>
+<p class="text-surface-variant font-body-md mb-4">Stay updated on our latest projects.</p>
+<div class="flex">
+<input class="bg-[#2a2a6b] border-none text-white p-3 w-full rounded-l-lg focus:ring-2 focus:ring-secondary" placeholder="Email" type="email"/>
+<button class="bg-secondary p-3 rounded-r-lg">
+<span class="material-symbols-outlined text-white">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/20 py-8 px-gutter">
+<div class="max-w-container-max mx-auto text-center md:text-left text-surface-variant font-body-md opacity-60">
+            © 2024 NGOJO Project Management. All rights reserved.
+        </div>
+</div>
+</footer>
+<script>
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.relative.flex').forEach(el => {
+        el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000');
+        observer.observe(el);
+    });
+</script>
+</body></html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | NGOJO Project Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#ffdad6",
+                    "inverse-surface": "#303030",
+                    "silver-border": "#E2E8F0",
+                    "outline-variant": "#c8c5d1",
+                    "primary": "#160c50", // Updated to Navy from logo
+                    "secondary-container": "#e31e24", // Updated to Red from logo
+                    "on-surface": "#1b1c1c",
+                    "on-background": "#1b1c1c",
+                    "surface-tint": "#160c50",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#eae8e7",
+                    "tertiary-container": "#370e00",
+                    "on-tertiary": "#ffffff",
+                    "ice-white": "#F8FAFC",
+                    "surface-bright": "#fbf9f8",
+                    "on-secondary-container": "#fffbff",
+                    "inverse-primary": "#c6bfff",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dcd9d9",
+                    "background": "#fbf9f8",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#370e00",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-container": "#b77359",
+                    "on-tertiary-fixed-variant": "#6e3822",
+                    "secondary": "#e31e24", // Updated to Red from logo
+                    "primary-container": "#160c50",
+                    "inverse-on-surface": "#f3f0f0",
+                    "surface-variant": "#e4e2e1",
+                    "on-primary-fixed": "#160c50",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "outline": "#787581",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#ffdbcf",
+                    "surface-container-highest": "#e4e2e1",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "on-primary-fixed-variant": "#443e7f",
+                    "surface": "#fbf9f8",
+                    "primary-fixed-dim": "#c6bfff",
+                    "primary-fixed": "#e4dfff",
+                    "secondary-fixed-dim": "#ffb3ad",
+                    "tertiary": "#160c50",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#474550",
+                    "on-secondary-fixed-variant": "#930011",
+                    "on-secondary-fixed": "#410003",
+                    "slate-gray": "#64748B",
+                    "on-primary-container": "#827cc1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "stack-md": "16px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "stack-sm": "8px",
+                    "section-gap": "80px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                    "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .service-card-hover:hover {
+            box-shadow: 0 20px 40px rgba(22, 12, 80, 0.05);
+            transform: translateY(-4px);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary selection:text-white">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-silver-border shadow-sm">
+<nav class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center">
+<img alt="NGOJO Project Management Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxxZf3nSFgQCbZZeIqaGdfEn3fQ6GZ5K04F-LFKKBmdm9nxJQJSyrTO_myDMm0_dDi9o86cRejV0CrF5Vh2re09PUsbD7Jq7HxZSzYhNk4gRNgdZBA1cHcHHvtPwPtj8dMKNA_hGch2iEPDSiFsQaErXwmcM8ItzBH9HOnC-jRsisEmlELmsMfR0G-Hhmn1nNuZVbDRSq74I6z8ySKPY49UTSx45EYG_N0PWFZOejkfe4fRbWaWIL8DzLgMg5EoDLVjBhQzkp6tcc"/>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-body-md text-body-md text-secondary font-bold border-b-2 border-secondary pb-1" href="#">Services</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="#">Projects</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="#">Methodology</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" href="#">Careers</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 font-label-caps text-label-caps uppercase rounded-lg hover:bg-opacity-90 active:scale-95 transition-all">
+                Request a Quote
+            </button>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-center overflow-hidden bg-primary">
+<div class="absolute inset-0 z-0 opacity-40">
+<div class="w-full h-full bg-cover bg-center" data-alt="A panoramic architectural photograph of a modern industrial complex under construction." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6Ke0SiEXsqV85CQiZFTR5XHkMqgYAnrH6wnlKzM7bwC_Oz_jptmEIegveBiPTCBJ8-_AxW6SW4aRoMofk73TlJWjWM_uhxw1moTjKkN7GSo6EqsXNT4DMv2INzPneGb79Ecpfa_Ni1qMU8lNDeSvvPJBmQ6rH6CFH-4exwokAXCn6zcAAwkh26KTm8qlJ4Ife5v3BE4IPPDKh9Wm1rvLQ9z_Nymbt2_bD1BGmv8AD4ytYcS-wwtpLPfecESWZutENh9VciCBEV8o')"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter w-full">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps text-secondary-fixed mb-4 block">OUR EXPERTISE</span>
+<h1 class="font-display-lg text-display-lg text-white mb-6">Comprehensive Infrastructure &amp; Management Solutions</h1>
+<p class="font-body-lg text-body-lg text-surface-variant mb-8">From ground-breaking construction to specialized maintenance, NGOJO delivers technical excellence across the built environment.</p>
+</div>
+</div>
+</section>
+<!-- Services Grid Container -->
+<div class="max-w-container-max mx-auto px-gutter py-section-gap space-y-section-gap">
+<!-- Construction -->
+<section class="reveal grid grid-cols-1 md:grid-cols-2 gap-12 items-center" id="construction">
+<div class="order-2 md:order-1">
+<div class="w-12 h-12 rounded-full border border-silver-border flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Construction</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">We provide turn-key construction solutions for commercial, industrial, and high-end residential projects. Our engineering-led approach ensures structural integrity and architectural precision at every stage of the build.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Turn-key structural development
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Civil engineering &amp; site preparation
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Rigorous safety &amp; quality compliance
+                        </li>
+</ul>
+<button class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps rounded uppercase hover:bg-opacity-90 transition-all">Request a Quote</button>
+</div>
+<div class="order-1 md:order-2 h-96 rounded-xl overflow-hidden border border-silver-border">
+<div class="w-full h-full bg-cover bg-center" data-alt="A professional close-up of a construction site." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCz4otR8GVslcxX2uR-v2GA6lSrClnsQjUXck6TQ2M4VncXzhV8WyFM7AJENwEx5ZcU94xMUfWYALN7fJRZ0E3ELxPgViMBj3hNXmPnJ-tCtW-E9Pja2t6cCwp_PCXEU_q33o-VB-z2oPA4iQIc3QyIlN6h-Wrt60CEYw1ojoytXekxTqdKKn4EYpIe_uIymdJh5t8KdOoLaJqUkdKObobS882SQdqxXm4qNq4Bj0JOYqTt-sWylKdiV8wPirchNCHUDCrbZ85uSu4')"></div>
+</div>
+</section>
+<!-- Electrical Installations -->
+<section class="reveal grid grid-cols-1 md:grid-cols-2 gap-12 items-center" id="electrical">
+<div class="h-96 rounded-xl overflow-hidden border border-silver-border">
+<div class="w-full h-full bg-cover bg-center" data-alt="Meticulously organized industrial electrical panel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiQ9fXbO8ganPWGHSqm227AxMk7tKkzA_1Yn7TE-xV4Q3VYg7aTyxGmZD-PiDK6Ag0sQmQESVVMLhAA2enPZJVv3-MN-lPB5i94CbB5Tt9WwyARRcV4MSDtMc7rkwT-6-wrive0_7XKjd91pR-SnhH_SPys8XtwiYFtCnyJawsFtb5CAqZZpMxCn2VP5wdVkwDWmhKT6grBtZoqW0yB_-Va_qWScHIbLBfT0GMjbv_TwpFWuknEWmp0LImwq4DuqQijuapVspQmI0')"></div>
+</div>
+<div>
+<div class="w-12 h-12 rounded-full border border-silver-border flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Electrical Installations</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Our certified electricians handle complex power distribution, lighting design, and industrial wiring. We prioritize efficiency and long-term reliability in every circuit we design.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Compliance certification (COC)
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Smart building integration
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Industrial power systems
+                        </li>
+</ul>
+<button class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps rounded uppercase hover:bg-opacity-90 transition-all">Request a Quote</button>
+</div>
+</section>
+<!-- Solar Installations -->
+<section class="reveal bg-white border border-silver-border p-8 md:p-16 rounded-xl shadow-sm" id="solar">
+<div class="flex flex-col md:flex-row gap-12">
+<div class="flex-1">
+<div class="w-12 h-12 rounded-full border border-silver-border flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined">solar_power</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Solar Installations</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Transition to sustainable energy with our advanced photovoltaic systems. We design bespoke solar solutions that reduce overhead costs and provide energy security for businesses and homes.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+<div class="p-4 bg-ice-white border border-silver-border rounded">
+<h4 class="font-label-caps text-label-caps text-secondary mb-2">EFFICIENCY</h4>
+<p class="font-body-md text-on-surface">Tier 1 solar panel technology for maximum output.</p>
+</div>
+<div class="p-4 bg-ice-white border border-silver-border rounded">
+<h4 class="font-label-caps text-label-caps text-secondary mb-2">BACKUP</h4>
+<p class="font-body-md text-on-surface">Lithium-ion storage for uninterrupted power.</p>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps rounded uppercase hover:bg-opacity-90 transition-all">Request a Quote</button>
+</div>
+<div class="flex-1 h-[400px] rounded-lg overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="High-end solar panels on a modern flat roof." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4YPh2JPZd8cCCSsIbGCZcrSGX9aq2zlWcrrN2AhBjP8CbwLNwQuy1LZpIJjySMaKv0dwwgeJImpU8XKGjuH7V4xNDp-Tw8kH9K_ua3xcagSgpAiVeQG_fxsjOJHFIzMjs7e298BjhE_MjYLxqPdOttXQXw2TSMOJA_r-SAHrdCaJmeW49hS29QgPmtseZiMqrVjnY1UTSYl14TE8E7eCILotDRzSzrxzVxKi8-FYYSus3npobrhkwiqRJKrnLQfSObnSUKbxwFRo')"></div>
+</div>
+</div>
+</section>
+<!-- Plumbing & Renovations -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<section class="reveal bg-white border border-silver-border p-8 rounded-xl service-card-hover transition-all" id="plumbing">
+<div class="w-12 h-12 rounded-full border border-silver-border flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Plumbing</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Expert hydraulic services including high-pressure systems, sanitation, and water heating solutions for large-scale developments.</p>
+<ul class="space-y-2 mb-8">
+<li class="flex items-center gap-3 font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">fiber_manual_record</span>
+                            Industrial piping systems
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">fiber_manual_record</span>
+                            Leak detection &amp; repair
+                        </li>
+</ul>
+<button class="border-2 border-secondary text-secondary px-6 py-3 font-label-caps text-label-caps rounded uppercase hover:bg-secondary hover:text-white transition-all w-full">Request a Quote</button>
+</section>
+<section class="reveal bg-white border border-silver-border p-8 rounded-xl service-card-hover transition-all" id="renovations">
+<div class="w-12 h-12 rounded-full border border-silver-border flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined">format_paint</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Renovations &amp; Alterations</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Transforming existing spaces through structural alterations and premium finishes. We modernize interiors while preserving structural integrity.</p>
+<ul class="space-y-2 mb-8">
+<li class="flex items-center gap-3 font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">fiber_manual_record</span>
+                            Open-plan conversions
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">fiber_manual_record</span>
+                            Premium interior finishes
+                        </li>
+</ul>
+<button class="border-2 border-secondary text-secondary px-6 py-3 font-label-caps text-label-caps rounded uppercase hover:bg-secondary hover:text-white transition-all w-full">Request a Quote</button>
+</section>
+</div>
+<!-- Project Management -->
+<section class="reveal relative bg-primary rounded-xl overflow-hidden py-16 px-8 md:px-16 text-white" id="management">
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-20 hidden md:block">
+<div class="w-full h-full bg-cover bg-center" data-alt="Top-down view of organized project management desk." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWpHm9o9NKK2-wA2Volus3iaW8KD11bDhbBRxGDb0KgSdU9bKY7UQ4Yr4tV6RsJ32XLUT7Uun8sBt7A_7zbvpY3bH-U3wkKzdc1RcDObh0eF3LhTGtHYjQ9hmh8TbMMm2k4wceCqPdlrXKyI2y_6vEzaSfgU5JoTYGrHKrgRni65n8lZyr_Ca5WrgS8FCxuIAx5SqhaSlivIXsA8iCkeOweK0lljMxeVk5PDmhnb-7tVsjNFv6DrLS1-I3rjDh-Zlo2u6VC--nQKw')"></div>
+</div>
+<div class="relative z-10 max-w-xl">
+<div class="w-12 h-12 rounded-full border border-surface-variant flex items-center justify-center mb-6 text-secondary-fixed">
+<span class="material-symbols-outlined">assignment</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-6">Project Management</h2>
+<p class="font-body-lg text-body-lg text-surface-variant mb-8">We mitigate risk and maximize value through professional oversight. Our managers handle budgeting, scheduling, and subcontractor coordination so your project remains on track and under budget.</p>
+<div class="space-y-4 mb-8">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-fixed">verified</span>
+<div>
+<h4 class="font-label-caps text-label-caps mb-1">STRATEGIC PLANNING</h4>
+<p class="text-sm opacity-80">Comprehensive timelines and resource allocation.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-fixed">verified</span>
+<div>
+<h4 class="font-label-caps text-label-caps mb-1">BUDGET CONTROL</h4>
+<p class="text-sm opacity-80">Transparent financial reporting and cost mitigation.</p>
+</div>
+</div>
+</div>
+<button class="bg-secondary text-white px-8 py-4 font-label-caps text-label-caps rounded uppercase hover:bg-opacity-90 transition-all">Engage Consultant</button>
+</div>
+</section>
+<!-- Home Maintenance & Handyman -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center reveal">
+<div class="h-80 rounded-xl overflow-hidden border border-silver-border">
+<div class="w-full h-full bg-cover bg-center" data-alt="Maintenance tools on a workbench." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAKyvmx1FWv3Z8RkZ3hKbl8DseTcLujAKPSHPdl7mHHQow-ZGyVWZH9_XN8AgRjptkGXs3K9H59AO55qpXko6ifNhdWTMLPxNvnJADLIeDRn8zXwuVN1LAoJux4WaQEZi2sbgtAd_P35DAy2YdTSH235NomZ2IIW6QFqkkxn20GmSH-QEShms0KZRuieh1jQWOhglbI1sftvjbCfW4iR01M2w4-mxLvoIeULZQMXCb_PdPLWw2-BwkK54t3pu-6nmgeJhnqdAAASc')"></div>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Home Maintenance</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Protect your investment with proactive maintenance schedules. We provide comprehensive checks and repairs to prevent costly long-term damage.</p>
+<button class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps rounded uppercase hover:bg-opacity-90 transition-all">View Maintenance Plans</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center reveal">
+<div class="order-2 md:order-1">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Handyman Services</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">No task is too small for professional execution. Our skilled handymen provide efficient solutions for minor repairs, installations, and general property improvements.</p>
+<button class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps rounded uppercase hover:bg-opacity-90 transition-all">Request Service</button>
+</div>
+<div class="order-1 md:order-2 h-80 rounded-xl overflow-hidden border border-silver-border">
+<div class="w-full h-full bg-cover bg-center" data-alt="Hands performing technical repair." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBy2lIhGN_Rw-x44RzorI5qEORne7rN_oV0prXpnFpQf4-qsmI4s7zCNdtghahPqKVwYXqWbeBmhpsgOhLSSwnKQslUpIO64ngkq_eAy6r1LcYDy9bSo4G2ZsZ0YjYOmjSeFrQ3gxXN952o_29LG-2v7FnFdJMXt8_GydHT3qFC9UCH0ylJyx0zvnQHWXILueeRPZ_PIcvLNE3Fcn4E-m1z94knTuSpnLRMKQupnWGWM3dwGaVvROI_mk9-1btqvkSnzV2D2c9MBhA')"></div>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<section class="bg-ice-white border-y border-silver-border py-20 text-center">
+<div class="max-w-container-max mx-auto px-gutter">
+<h2 class="font-display-lg text-display-lg text-primary mb-6">Ready to start your next project?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Contact our engineering team today for a detailed consultation and professional quote tailored to your specific requirements.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary text-on-primary px-10 py-5 font-label-caps text-label-caps rounded uppercase hover:bg-opacity-90 transition-all">Request a Quote</button>
+<button class="border-2 border-primary text-primary px-10 py-5 font-label-caps text-label-caps rounded uppercase hover:bg-primary hover:text-white transition-all">Call Our Office</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-section-gap bg-primary text-on-primary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-16 max-w-container-max mx-auto">
+<div class="space-y-6">
+<img alt="NGOJO Logo" class="h-10 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxxZf3nSFgQCbZZeIqaGdfEn3fQ6GZ5K04F-LFKKBmdm9nxJQJSyrTO_myDMm0_dDi9o86cRejV0CrF5Vh2re09PUsbD7Jq7HxZSzYhNk4gRNgdZBA1cHcHHvtPwPtj8dMKNA_hGch2iEPDSiFsQaErXwmcM8ItzBH9HOnC-jRsisEmlELmsMfR0G-Hhmn1nNuZVbDRSq74I6z8ySKPY49UTSx45EYG_N0PWFZOejkfe4fRbWaWIL8DzLgMg5EoDLVjBhQzkp6tcc"/>
+<p class="text-surface-variant text-sm">Professional project management and infrastructure services delivered with engineering precision across South Africa.</p>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps">SERVICES</h4>
+<ul class="space-y-3">
+<li><a class="text-surface-variant hover:text-on-primary transition-colors text-body-md" href="#">Construction</a></li>
+<li><a class="text-surface-variant hover:text-on-primary transition-colors text-body-md" href="#">Electrical &amp; Solar</a></li>
+<li><a class="text-surface-variant hover:text-on-primary transition-colors text-body-md" href="#">Project Management</a></li>
+<li><a class="text-surface-variant hover:text-on-primary transition-colors text-body-md" href="#">Maintenance</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps">LEGAL</h4>
+<ul class="space-y-3">
+<li><a class="text-surface-variant hover:text-on-primary transition-colors text-body-md" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant hover:text-on-primary transition-colors text-body-md" href="#">Terms of Service</a></li>
+<li><a class="text-surface-variant hover:text-on-primary transition-colors text-body-md" href="#">BEE Certification</a></li>
+<li><a class="text-surface-variant hover:text-on-primary transition-colors text-body-md" href="#">Safety Protocols</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps">CONNECT</h4>
+<p class="text-surface-variant text-sm">Head Office: 124 Engineering Way, Sandton, 2196</p>
+<div class="flex space-x-4">
+<a class="w-10 h-10 rounded border border-outline flex items-center justify-center hover:bg-secondary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded border border-outline flex items-center justify-center hover:bg-secondary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-outline py-8 text-center text-surface-variant text-sm">
+            © 2024 NGOJO Project Management. All rights reserved.
+        </div>
+</footer>
+<script>
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body></html>

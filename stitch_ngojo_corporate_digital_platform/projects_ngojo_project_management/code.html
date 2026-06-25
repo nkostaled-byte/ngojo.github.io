@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects | NGOJO Project Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#ffdad6",
+                    "inverse-surface": "#303030",
+                    "silver-border": "#E2E8F0",
+                    "outline-variant": "#c8c5d1",
+                    "primary": "#160c50",
+                    "secondary-container": "#de2d30",
+                    "on-surface": "#1b1c1c",
+                    "on-background": "#1b1c1c",
+                    "surface-tint": "#5c5699",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#eae8e7",
+                    "tertiary-container": "#370e00",
+                    "on-tertiary": "#ffffff",
+                    "ice-white": "#F8FAFC",
+                    "surface-bright": "#fbf9f8",
+                    "on-secondary-container": "#fffbff",
+                    "inverse-primary": "#c6bfff",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dcd9d9",
+                    "background": "#fbf9f8",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#370e00",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-container": "#b77359",
+                    "on-tertiary-fixed-variant": "#6e3822",
+                    "secondary": "#e31e24",
+                    "primary-container": "#180f52",
+                    "inverse-on-surface": "#f3f0f0",
+                    "surface-variant": "#e4e2e1",
+                    "on-primary-fixed": "#180f52",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "outline": "#787581",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#ffdbcf",
+                    "surface-container-highest": "#e4e2e1",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "on-primary-fixed-variant": "#443e7f",
+                    "surface": "#fbf9f8",
+                    "primary-fixed-dim": "#c6bfff",
+                    "primary-fixed": "#e4dfff",
+                    "secondary-fixed-dim": "#ffb3ad",
+                    "tertiary": "#000000",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#474550",
+                    "on-secondary-fixed-variant": "#930011",
+                    "on-secondary-fixed": "#410003",
+                    "slate-gray": "#64748B",
+                    "on-primary-container": "#827cc1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "stack-md": "16px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "stack-sm": "8px",
+                    "section-gap": "80px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        .filter-btn.active {
+            @apply border-secondary text-secondary font-bold;
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 24px;
+        }
+        .span-v-2 { grid-row: span 2; }
+        .span-h-2 { grid-column: span 2; }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface dark:bg-inverse-surface border-b border-silver-border dark:border-outline-variant shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center">
+<img alt="NGOJO Brand Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxxZf3nSFgQCbZZeIqaGdfEn3fQ6GZ5K04F-LFKKBmdm9nxJQJSyrTO_myDMm0_dDi9o86cRejV0CrF5Vh2re09PUsbD7Jq7HxZSzYhNk4gRNgdZBA1cHcHHvtPwPtj8dMKNA_hGch2iEPDSiFsQaErXwmcM8ItzBH9HOnC-jRsisEmlELmsMfR0G-Hhmn1nNuZVbDRSq74I6z8ySKPY49UTSx45EYG_N0PWFZOejkfe4fRbWaWIL8DzLgMg5EoDLVjBhQzkp6tcc"/>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface dark:text-inverse-on-surface hover:text-secondary transition-colors" href="#">Services</a>
+<a class="font-body-md text-body-md text-secondary font-bold border-b-2 border-secondary pb-1" href="#">Projects</a>
+<a class="font-body-md text-body-md text-on-surface dark:text-inverse-on-surface hover:text-secondary transition-colors" href="#">Methodology</a>
+<a class="font-body-md text-body-md text-on-surface dark:text-inverse-on-surface hover:text-secondary transition-colors" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface dark:text-inverse-on-surface hover:text-secondary transition-colors" href="#">Careers</a>
+</div>
+<button class="bg-primary text-on-primary font-label-caps px-6 py-3 rounded uppercase tracking-wider hover:bg-secondary transition-all active:scale-95">
+                Request a Quote
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-section-gap">
+<!-- Hero Section -->
+<header class="max-w-container-max mx-auto px-gutter mb-16">
+<div class="max-w-3xl">
+<h6 class="font-label-caps text-label-caps text-secondary mb-4">OUR TRACK RECORD</h6>
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Excellence in Engineering &amp; Infrastructure</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">A showcase of our multi-disciplinary expertise across South Africa, ranging from civil engineering masterpieces to sustainable energy solutions.</p>
+</div>
+</header>
+<!-- Filter System -->
+<section class="max-w-container-max mx-auto px-gutter mb-12">
+<div class="flex flex-wrap gap-4 items-center border-b border-silver-border pb-6">
+<button class="filter-btn active px-4 py-2 font-label-caps text-label-caps border-b-2 border-transparent transition-all hover:text-secondary" onclick="filterProjects('all')">ALL PROJECTS</button>
+<button class="filter-btn px-4 py-2 font-label-caps text-label-caps border-b-2 border-transparent transition-all hover:text-secondary" onclick="filterProjects('commercial')">COMMERCIAL</button>
+<button class="filter-btn px-4 py-2 font-label-caps text-label-caps border-b-2 border-transparent transition-all hover:text-secondary" onclick="filterProjects('residential')">RESIDENTIAL</button>
+<button class="filter-btn px-4 py-2 font-label-caps text-label-caps border-b-2 border-transparent transition-all hover:text-secondary" onclick="filterProjects('solar')">SOLAR &amp; ENERGY</button>
+<button class="filter-btn px-4 py-2 font-label-caps text-label-caps border-b-2 border-transparent transition-all hover:text-secondary" onclick="filterProjects('infrastructure')">INFRASTRUCTURE</button>
+</div>
+</section>
+<!-- Projects Grid (Asymmetric Layout) -->
+<section class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[280px]" id="projects-grid">
+<!-- Project 1: Commercial (Large Feature) -->
+<div class="md:col-span-8 md:row-span-2 group relative overflow-hidden bg-white border border-silver-border shadow-sm hover:shadow-xl transition-all duration-500 project-card" data-category="commercial">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSqEiISuGBdllu_VQ1B-o7Bpwwib3fh8xCCgyBIi6S2NzYi-upbIlu407hAMmNLznPEToG-V6bd6xa5rt-eEYJf7xO9h6avz0qoOvKjj5fw5KZ8taegUXY3-zWZPH9NmX7vgBOO9WC0hegUcwWUFZf4_6TeRzYqv78RGaINLH7enYncMEv52Skf6tUbznoUaAZb1qBEij1HggIIU2f_usP5zz5uP4X2hXAwhvtboD_jYX-xyt10LgyDO3aZdPgdAgGZn_epLamuzw')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="inline-block bg-secondary text-on-primary text-[10px] font-bold px-3 py-1 mb-4 tracking-widest uppercase">COMMERCIAL</span>
+<h3 class="font-headline-lg text-headline-lg text-white mb-2">The Apex Corporate Plaza</h3>
+<p class="font-body-md text-white/80 max-w-xl opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">A 24-story architectural landmark featuring state-of-the-art sustainable engineering and precision-crafted steel facades.</p>
+</div>
+</div>
+<!-- Project 2: Solar -->
+<div class="md:col-span-4 md:row-span-1 group relative overflow-hidden bg-white border border-silver-border shadow-sm project-card" data-category="solar">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbJy_Rft0nNB-PbH6aBIB8_w6uimuMKlkLAC5CkRzpPDWwxONUuWBuKNie6RcO9fEBERlzr6ILu5Kj-17ZXin3aRIZKGzaIVor-BRrkwX8PhagGyVRvp6wZDBYXzGbQ1P6A9gEotZ4W0ujKpdeeehI36XhudD9s_VEMEFI8fE2a6o5YByNY9k5CaLTV3djvSqzvljKJcOIJgD4zqZP2WWgUyey1DOKtr_eug-kgruckq1eflo4XQt2q4M7groYumA5yTPWZCVUwLA')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="inline-block bg-secondary text-on-primary text-[10px] font-bold px-3 py-1 mb-2 tracking-widest uppercase">SOLAR</span>
+<h3 class="font-headline-md text-headline-md text-white">Cape Solar Farm Phase II</h3>
+</div>
+</div>
+<!-- Project 3: Infrastructure -->
+<div class="md:col-span-4 md:row-span-1 group relative overflow-hidden bg-white border border-silver-border shadow-sm project-card" data-category="infrastructure">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqhEiqV0P5y0RFiMnEYfVvKg9TInb9mJMIxgELSkBOt--thu-qCSPDE1V7wD8w38E1EpYmtlKwqDSMLRpj4zmRrTGiOgNVK8cM5mLVF2ed2k5ov-8qaUkiexjUGmPjyYmEomXgIh_3409xiJkHKZxkN9e4ZRdG_Crb8M1OctSh43hOnT91m8dKerjE7vsih3B2tFICD5-wGNQVPbfYB_vjNUwW-pD8IRkAZPefLOpFBzR9FYlusHRTbh9a6RTeW-FCjusuMN_FvFI')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="inline-block bg-secondary text-on-primary text-[10px] font-bold px-3 py-1 mb-2 tracking-widest uppercase">INFRASTRUCTURE</span>
+<h3 class="font-headline-md text-headline-md text-white">N1 Freeway Extension</h3>
+</div>
+</div>
+<!-- Project 4: Residential -->
+<div class="md:col-span-4 md:row-span-2 group relative overflow-hidden bg-white border border-silver-border shadow-sm project-card" data-category="residential">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD44bwTFrumDcudvkrI0XzJPtMq3CT3Pxm5VdvssJ4wmMsIywOL2Izvf30VG_dmkgjfFgB4lwKtvfn7TFHdX937RbWHBtUYbFEPn5mqRjOO2Ls7VsCPw7Pb4oB1F6rKtnotQvFtW5a_7B-MNZzD-bW6_O-DQiq8AojD_RbqBl9C1qXPQJN880EvEKPnfkFqBXVjCcbS8tNVzqRCgYw_irRkErLbfAEcTTV6oEUjFnFYn-triu18qipMYcF8KnhCRe0tblkJ1DjTJZQ')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="inline-block bg-secondary text-on-primary text-[10px] font-bold px-3 py-1 mb-4 tracking-widest uppercase">RESIDENTIAL</span>
+<h3 class="font-headline-lg text-headline-lg text-white mb-2">Zimbali Estate Retreat</h3>
+<p class="font-body-md text-white/80 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all">An award-winning luxury residence blending modern minimalism with structural durability.</p>
+</div>
+</div>
+<!-- Project 5: Commercial -->
+<div class="md:col-span-8 md:row-span-1 group relative overflow-hidden bg-white border border-silver-border shadow-sm project-card" data-category="commercial">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCpqylfTXrJviGfpcUMubFkYXIH1hn3tGQPNlqIrkc7MzWPWyy_p2P6XOTWPYs0IEeEa01fU744nNuITbSAGsd8Zhxe6j9wy1f3vXBjK5ndCesUs4dMomoGWbZQcDcwPOcjaAIKEUNj1AeXI9N5obJV1i7RWCq5azdhc9lSttbMOJT1qSyegSiRz_LWa7U8C8ineIBncpv-uqu_gftR9G92uoHdpMbq3X5EcHr4dO7zzv_XTJ589eKtUVNd21MwLcbah5kvm31ZZH0')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent"></div>
+<div class="absolute inset-y-0 left-0 flex flex-col justify-center p-12">
+<span class="inline-block self-start bg-secondary text-on-primary text-[10px] font-bold px-3 py-1 mb-4 tracking-widest uppercase">COMMERCIAL</span>
+<h3 class="font-headline-lg text-headline-lg text-white mb-2">Industrial Logistics Hub</h3>
+<p class="font-body-md text-white/80 max-w-sm">40,000sqm of automated warehousing engineered for peak logistical efficiency.</p>
+</div>
+</div>
+<!-- Project 6: Solar -->
+<div class="md:col-span-4 md:row-span-1 group relative overflow-hidden bg-white border border-silver-border shadow-sm project-card" data-category="solar">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYVuj2QoBdOtns8Xr2HVZYaJJ0lUMfkPPCEzc-gnJ8se63VMmQXcdyXqfgaSVylEoX3mqH9ljyS_L93FP9Iqc7vbDzQtYITZ5fMhOPQ8xnnSWiyWs1beGwPWVqDp6wLOttwlxtJsWNneE7kid-T1rolaBP6U9BIKmou5uJHxXIG6fQ9osbQrkhw78a55cvQeO_44zl2_IxNFOxN4R-yfpi7TOssIxwUq0IVKJizz1LKVz4hoKuNYIKKMfuqV4lpwsnzT1jf27RHII')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="inline-block bg-secondary text-on-primary text-[10px] font-bold px-3 py-1 mb-2 tracking-widest uppercase">SOLAR</span>
+<h3 class="font-headline-md text-headline-md text-white">Urban Grid Integration</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-section-gap max-w-container-max mx-auto px-gutter">
+<div class="bg-primary p-16 rounded-lg relative overflow-hidden">
+<div class="relative z-10 text-center max-w-2xl mx-auto">
+<h2 class="font-display-lg text-display-lg text-on-primary mb-6">Ready to Build Your Vision?</h2>
+<p class="font-body-lg text-surface-variant mb-10">From initial feasibility studies to final delivery, NGOJO provides the technical expertise and management rigor your project demands.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-secondary text-on-primary font-label-caps px-10 py-4 rounded hover:brightness-110 transition-all">START A PROJECT</button>
+<button class="border-2 border-on-primary text-on-primary font-label-caps px-10 py-4 rounded hover:bg-on-primary hover:text-primary transition-all">VIEW SERVICES</button>
+</div>
+</div>
+<!-- Subtle decorative background element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary opacity-10 rounded-full -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary opacity-5 rounded-full -ml-48 -mb-48"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-section-gap bg-primary dark:bg-black border-t border-outline">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-16 max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<img alt="NGOJO Brand Logo" class="h-10 w-auto object-contain mb-6 brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxxZf3nSFgQCbZZeIqaGdfEn3fQ6GZ5K04F-LFKKBmdm9nxJQJSyrTO_myDMm0_dDi9o86cRejV0CrF5Vh2re09PUsbD7Jq7HxZSzYhNk4gRNgdZBA1cHcHHvtPwPtj8dMKNA_hGch2iEPDSiFsQaErXwmcM8ItzBH9HOnC-jRsisEmlELmsMfR0G-Hhmn1nNuZVbDRSq74I6z8ySKPY49UTSx45EYG_N0PWFZOejkfe4fRbWaWIL8DzLgMg5EoDLVjBhQzkp6tcc"/>
+<p class="text-surface-variant font-body-md mb-6">Building excellence through precision project management and engineering innovation across South Africa.</p>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-secondary-fixed mb-6">EXPLORE</h4>
+<ul class="space-y-4">
+<li><a class="text-surface-variant hover:text-on-primary transition-colors font-body-md hover:underline" href="#">Services</a></li>
+<li><a class="text-secondary-fixed font-bold font-body-md" href="#">Projects</a></li>
+<li><a class="text-surface-variant hover:text-on-primary transition-colors font-body-md hover:underline" href="#">Methodology</a></li>
+<li><a class="text-surface-variant hover:text-on-primary transition-colors font-body-md hover:underline" href="#">About Us</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-secondary-fixed mb-6">LEGAL</h4>
+<ul class="space-y-4">
+<li><a class="text-surface-variant hover:text-on-primary transition-colors font-body-md hover:underline" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant hover:text-on-primary transition-colors font-body-md hover:underline" href="#">Terms of Service</a></li>
+<li><a class="text-surface-variant hover:text-on-primary transition-colors font-body-md hover:underline" href="#">BEE Certification</a></li>
+<li><a class="text-surface-variant hover:text-on-primary transition-colors font-body-md hover:underline" href="#">Safety Protocols</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-secondary-fixed mb-6">CONTACT</h4>
+<p class="text-surface-variant font-body-md mb-4">128 Rivonia Road, Sandton<br/>Johannesburg, 2196</p>
+<p class="text-surface-variant font-body-md mb-2">T: +27 (0)11 456 7890</p>
+<p class="text-surface-variant font-body-md">E: info@ngojo-pm.co.za</p>
+</div>
+</div>
+<div class="px-gutter py-8 border-t border-outline-variant/10 max-w-container-max mx-auto flex justify-between items-center">
+<span class="text-surface-variant font-body-md text-sm">© 2024 NGOJO Project Management. All rights reserved.</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-surface-variant hover:text-secondary cursor-pointer">share</span>
+<span class="material-symbols-outlined text-surface-variant hover:text-secondary cursor-pointer">mail</span>
+</div>
+</div>
+</footer>
+<script>
+        function filterProjects(category) {
+            // Update UI buttons
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.innerText.toLowerCase().includes(category.toLowerCase()) || (category === 'all' && btn.innerText.toLowerCase() === 'all projects')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Filter items
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                    // Re-trigger animation
+                    card.classList.add('animate-fade-in');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Simple intersection observer for scroll effects
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(card);
+        });
+    </script>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+    </style>
+</body></html>
